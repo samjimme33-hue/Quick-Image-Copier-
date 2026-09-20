@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for contrast -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+
+    <!-- Shiny Metallic Gradient for the C+ Icon -->
+    <linearGradient id="shinyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#a1c4fd"/>
+      <stop offset="50%" stop-color="#c2e9fb"/>
+      <stop offset="70%" stop-color="#6a11cb"/>
+      <stop offset="100%" stop-color="#2575fc"/>
+    </linearGradient>
+
+    <!-- Drop Shadow for Depth -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#2575fc" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="200" height="200" rx="24" fill="url(#bgGrad)"/>
+
+  <!-- Logo Group -->
+  <g filter="url(#glow)" fill="none" stroke="url(#shinyGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Stylized 'C' shape with open gap on the right -->
+    <path d="M 120 50 
+             Q 60 50 60 100 
+             Q 60 150 120 150" />
+    
+    <!-- Plus Sign (+) positioned where the C opens -->
+    <path d="M 135 100 H 165 M 150 85 V 115" stroke-width="10"/>
+  </g>
+</svg>

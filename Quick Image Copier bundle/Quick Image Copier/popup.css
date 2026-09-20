@@ -1,0 +1,145 @@
+body {
+  width: 260px; /* Thinned out the window box size */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background-color: #121214; /* Cleaner deep black/dark gray profile */
+  color: #e4e4e7;
+  user-select: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a1a1aa;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+#download-all {
+  background-color: #2563eb;
+}
+
+#download-all:hover {
+  background-color: #1d4ed8;
+}
+
+#clear-all {
+  background-color: #dc2626;
+}
+
+#clear-all:hover {
+  background-color: #b91c1c;
+}
+
+/* Compact 4-Column Grid Structure */
+.history-container {
+  max-height: 220px; /* Reduced vertical footprint */
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row instead of 3 */
+  gap: 5px; /* Tighter padding margins */
+}
+
+/* Scrollbar aesthetic cleanup */
+.history-container::-webkit-scrollbar {
+  width: 4px;
+}
+.history-container::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 2px;
+}
+
+.empty-message {
+  grid-column: span 4;
+  text-align: center;
+  color: #71717a;
+  font-size: 11px;
+  padding: 15px 0;
+}
+
+.image-card {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #27272a;
+  background-color: #1c1c1f;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.02);
+  border-color: #3b82f6;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sleek Single Action Mini Buttons */
+.download-single-btn, .remove-single-btn {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  font-weight: bold;
+  z-index: 2;
+  padding: 0;
+}
+
+.download-single-btn {
+  bottom: 4px;
+  right: 4px;
+  background-color: rgba(37, 99, 235, 0.95);
+}
+
+.remove-single-btn {
+  top: 4px;
+  right: 4px;
+  background-color: rgba(220, 38, 38, 0.95);
+}
+
+.image-card:hover .download-single-btn,
+.image-card:hover .remove-single-btn {
+  opacity: 1;
+}
+
+.download-single-btn:hover, .remove-single-btn:hover {
+  transform: scale(1.15);
+}

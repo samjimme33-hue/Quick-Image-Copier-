@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Image Copier</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h3>📋 History</h3>
+    <div class="action-buttons">
+      <button id="download-all" title="Download all items">Download All</button>
+      <button id="clear-all" title="Clear entire history">Clear</button>
+    </div>
+  </div>
+
+  <!-- Compact 4-Column Grid Structure -->
+  <div class="history-container" id="history-list">
+    <div class="empty-message" id="empty-state">
+      No images copied yet.
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
